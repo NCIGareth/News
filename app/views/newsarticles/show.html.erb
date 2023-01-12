@@ -3,8 +3,8 @@
 <%= render @newsarticle %>
 
 <div>
-  <%= link_to "Edit this newsarticle", edit_newsarticle_path(@newsarticle) %> |
-  <%= link_to "Back to newsarticles", newsarticles_path %>
+  <%= link_to "Edit this newsarticle", edit_newsarticle_path(@newsarticle), class: "btn btn-secondary" %> |
+  <%= link_to "Back to newsarticles", newsarticles_path, class: "btn btn-secondary" %>
 
-  <%= button_to "Destroy this newsarticle", @newsarticle, method: :delete %>
+  <%= button_to "Destroy this newsarticle", @newsarticle, method: :delete, class: "btn btn-secondary" %>
 </div>

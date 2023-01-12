@@ -1,0 +1,18 @@
+<% @weather['weather'].each do |we| %>
+<div class="card" style="width: 18rem;">
+<img src="/Images/<%=we['icon']%>.png" width="200" height="200">
+  <div class="card-body">
+    <p class="card-text"> <%= we['description'] %></p>
+    
+    <p class="card-text">Temp<%= we["main"[1]]%>°</p>
+    <p class="card-text">Feels Like<%= we["main"[3]]%>°</p>
+    <p class="card-text">Min Temp<%= we["main"[5]]%>°</p>
+    <p class="card-text">Max Temp<%= we["main"[7]]%>°</p>
+    <p class="card-text">Pressure<%= we["main"[9]]%>°</p>     
+ <% end %>
+
+  
+  </div>
+</div>
+
+
