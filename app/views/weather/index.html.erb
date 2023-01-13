@@ -1,18 +1,31 @@
-<% @weather['weather'].each do |we| %>
-<div class="card" style="width: 18rem;">
-<img src="/Images/<%=we['icon']%>.png" width="200" height="200">
-  <div class="card-body">
-    <p class="card-text"> <%= we['description'] %></p>
-    
-    <p class="card-text">Temp<%= we["main"[1]]%>°</p>
-    <p class="card-text">Feels Like<%= we["main"[3]]%>°</p>
-    <p class="card-text">Min Temp<%= we["main"[5]]%>°</p>
-    <p class="card-text">Max Temp<%= we["main"[7]]%>°</p>
-    <p class="card-text">Pressure<%= we["main"[9]]%>°</p>     
- <% end %>
-
-  
+<div class="weather-app-container">
+<form class="form-inline" action="/weather" method="get">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="location" class="sr-only">Location</label>
+    <input type="text" class="form-control" id="location" name="location" placeholder="Enter location">
   </div>
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="units" class="sr-only">Units</label>
+    <select class="form-control" id="units" name="units">
+      <option value="metric">Celsius</option>
+      <option value="imperial">Fahrenheit</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+
+  <div class="card weather-card">
+    <div class="card-body">
+      <h5 class="card-title">Weather in <%= @location %></h5>
+      <img src="http://openweathermap.org/img/wn/<%= @weather["weather"][0]["icon"] %>@2x.png" alt="Weather icon">
+      <p class="card-text">Temperature: <%= @weather["main"]["temp"] %>°</p>
+      <p class="card-text">Feels Like: <%= @weather["main"]["feels_like"] %>°</p>
+      <p class="card-text">Description: <%= @weather["weather"][0]["description"] %></p>
+      <p class="card-text">Wind Speed: <%= @wind_speed %> m/s</p>
+      <p class="card-text">Pressure: <%= @pressure %> hPa</p>
+      <p class="card-text">Visibility: <%= @visibility %> m</p>
+      <p class="card-text">Sunrise: <%= @sunrise %></p>
+      <p class="card-text">Sunset: <%= @sunset %></p>
+    </div>
+    </div>
 </div>
-
-

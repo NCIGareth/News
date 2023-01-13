@@ -11,42 +11,42 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :source, style: "display: block" %>
-    <%= form.text_field :source %>
+  <div class="mb-3">
+    <%= form.label :source, style: "display: block", class: "form-control" %>
+    <%= form.text_field :source, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
+  <div class="mb-3">
+    <%= form.label :author, style: "display: block", class: "form-control" %>
+    <%= form.text_field :author, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="mb-3">
+    <%= form.label :title, style: "display: block", class: "form-control" %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :text, style: "display: block" %>
-    <%= form.text_field :text %>
+  <div class="mb-3">
+    <%= form.label :text, style: "display: block", class: "form-control" %>
+    <%= form.text_field :text, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :imglink, style: "display: block" %>
-    <%= form.text_field :imglink %>
+  <div class="mb-3">
+    <%= form.label :imglink, style: "display: block", class: "form-control" %>
+    <%= form.text_field :imglink, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :articlelink, style: "display: block" %>
-    <%= form.text_field :articlelink %>
+  <div class="mb-3">
+    <%= form.label :articlelink, style: "display: block", class: "form-control" %>
+    <%= form.text_field :articlelink, class: "form-control" %>
   </div>
 
-    <div>
+    <div class="mb-3">
     <%= form.number_field :user_id, id: :newsarticle_user_id, value: current_user.id, type: :hidden %>
   </div>
 
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,18 +1,16 @@
-<% @all_news['articles'].each do |art| %>
+<% @articles.each do |article| %>
+  <div class="card">
+  <div class="card-header">
+    <h2><%= article["title"] %></h2>
+  </div>
+    <img src=<%= article["urlToImage"] %> class="card-img-top" alt="...">
 
-<div class="card">
-    <div class="card-header">
-        <%= art['source'['name']] %>
-    </div>
-  <img src=<%= art['urlToImage'] %> class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title"><%= art['title'] %></h5>
-    <p class="card-text"><%= art['description'] %></p>
-    <a href=<%= art['url'] %> class="btn btn-primary">Read More</a>
-
+    <h5 class="card-title">By <%= article["author"] %></h5>
+    <p class="card-text"><%= article["description"] %></p>
+    <p class="card-text">Source: <%= article["source"]["name"] %></p>
+    <p class="card-text"><a href="<%= article["url"] %>">Read More</a></p>
+    <%= button_to 'Save', newsarticles_save_path(article_id: article["title"]), method: :post , class:"btn btn-primary" %>
   </div>
 </div>
-
- <% end %>
-
-
+<% end %>
