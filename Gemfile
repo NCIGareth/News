@@ -10,6 +10,20 @@ gem "httparty"
 
 gem "devise"
 
+#CI/CD
+
+gem "brakeman"
+
+gem "bundler-audit"
+
+gem "ruby_audit"
+
+gem "pg"
+
+gem "rubocop-rails"
+
+gem "rubocop"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
