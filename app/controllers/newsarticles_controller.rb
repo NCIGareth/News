@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Style/Documentation
+
 class NewsarticlesController < ApplicationController
   before_action :set_newsarticle, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
