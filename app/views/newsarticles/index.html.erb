@@ -1,13 +1,46 @@
-<p style="color: green"><%= notice %></p>
 
 <h1>News</h1>
 
 <div id="newsarticles">
   <% @newsarticles.each do |newsarticle| %>
-    <%= render newsarticle %>
+     
+  <% if newsarticle.user == current_user %>
+
+  <p>
+    <strong>Source:</strong>
+    <%= newsarticle.source %>
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    <%= newsarticle.author %>
+  </p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= newsarticle.title %>
+  </p>
+
+  <p>
+    <strong>Text:</strong>
+    <%= newsarticle.text %>
+  </p>
+
+  <p>
+    <strong>Imglink:</strong>
+    <%= newsarticle.imglink %>
+  </p>
+
+  <p>
+    <strong>Articlelink:</strong>
+    <%= newsarticle.articlelink %>
+  </p>
+
     <p>
       <%= link_to "Show this newsarticle", newsarticle, class: "btn btn-secondary" %>
     </p>
+        <% end %>
+
   <% end %>
 </div>
 

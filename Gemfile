@@ -8,6 +8,8 @@ gem "rails", "~> 7.0.4"
 
 gem "httparty"
 
+gem "devise"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
